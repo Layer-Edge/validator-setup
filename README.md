@@ -28,11 +28,12 @@
   ```sh
   git clone https://github.com/Layer-Edge/cosmos-evm.git
   cd cosmos-evm
+  git checkout edgen-mainnet
 
   # this will create evmd in ~/go/bin/evmd and ~/.evmd of chain configuration
   ./init_node.sh
 
-  echo 'alias evmd="$HOME/go/bin/evmd"'
+  echo 'alias evmd="$HOME/go/bin/evmd"' >> ~/.bashrc
 
   source ~/.bashrc
   ```
@@ -44,7 +45,7 @@
 
 - **Configure Persistent Peers**
   ```sh
-  nano ~/.your-chain-name/config/config.toml
+  nano ~/.evmd/config/config.toml
   # Set:
   persistent_peers = "d638950f8f8abe07261a10be23fef3c95b3b0626@63.178.182.38:26656,b4f6f7ac3d453c56d5cb7e644830c65803f87755@3.124.18.213:26656"
   ```
